@@ -10,3 +10,12 @@ block content
       input(id='url', name='url', type='text')
       |   
       input(type="submit", value="Submit")
+
+
+  h3= 'Original Image'
+  img(src='#{url}', height='300')
+
+  h3= 'Similar Images'
+  ul
+    each val in similar_products
+      img(src='#{val}', height='300')
