@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  br
+  div
+    form(action='/explorer/' method='get')
+      input(id='offset', name='offset', type='hidden', value=next_offset)
+      input(type="submit", value="Next Page")
+  br
+  ul
+    each item in data_obj
+      hr
+      span(class='outlined')
+        img(src=item.url, height="200" border='5')
+      each sub_item in item.nn
+        img(src=sub_item.url, height="200")
+      br
+      br
