@@ -1,7 +1,18 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		block head
+			block title
+				title= title
+			link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+			| <style>
+			| body { padding-top: 60px; }
+			| </style>
+			script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+	body
+		include header
+
+		div.container
+			block content
+
+		//include footer
